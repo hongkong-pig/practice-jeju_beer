@@ -11,7 +11,7 @@ function setup_navigation(){
         "top": "50%",
         "margin-top": "-125px",
     })
-    gnb_utill.find('img').attr("src","/images/common/icon_open.png");
+    gnb_utill.find('img').attr("src","./images/common/icon_open.png");
     
     
     /*clicking utill button action*/
@@ -25,7 +25,7 @@ function setup_navigation(){
             if(position==0) {
                 /*close*/
                 destination = -1*width;
-                gnb_utill.find('img').attr("src","/images/common/icon_open.png");
+                gnb_utill.find('img').attr("src","./images/common/icon_open.png");
                 gnb.animate({
                     "margin-left": destination+"px"
                 }, 300, function(){
@@ -42,7 +42,7 @@ function setup_navigation(){
                 });
             } else{
                 /*open*/
-                gnb_utill.find('img').attr("src","/images/common/icon_close.png");
+                gnb_utill.find('img').attr("src","./images/common/icon_close.png");
                 gnb_utill.animate({
                     "height": "60px",
                     "line-height": "60px",
