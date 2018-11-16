@@ -14,6 +14,9 @@
         <script type="text/javascript">
             function popup(type, src){
                 var popup = $(".popup");
+                if(popup.css("display") != "none"){
+                    return;
+                }
                 var content_view = $(".popup .content_view");
 
                 if(type == "video") {
@@ -92,11 +95,16 @@
                     popup.css("display", "block");
                 } else if(type == "picture"){
                     var files = [];
-                    $.get(src, function(data) 
+                                    
+                    $.get(src + "meta.xml", function(data) 
                     {
-                        $(data).find("a:contains(" + ".jpg" + ")").each(function(){
-                            files.push(this.href.replace(/http:\/\/(.*\/)/, ""));
-                        });
+                        var meta = $(data);
+
+                        var file_list = meta.find("filelist").find("file");
+                        file_list.each(function() {
+                            files.push($(this).text());
+                        })
+                        
                         var ul=$("<ul></ul>");
                         for(var i= 0; i< files.length; ++i) {
                             ul.append("<li><img src=\""+ src + files[i] +"\"/></li>");
@@ -157,7 +165,7 @@
                     <ul class="intro_brewary intro_list">
                         <li>
                             <div class="button_wrap">
-                            <a href="#" onclick="popup('picture', './images/2_brewary_01/brewary_01/')">
+                            <a href="#" onclick="popup('picture', './images/image_list/01/')">
                                 <img src="./images/2_brewary_01/img_01.png" alt="BREWEARY 이미지"/>
                                 <div class="title">
                                     <h3>BREWEARY</h3>
@@ -241,7 +249,7 @@
                     <ul class="intro_tour intro_list">
                         <li>
                             <div class="button_wrap">
-                                <a href="#" onclick="popup('picture', './images/2_brewary_01/tour_01/')">
+                                <a href="#" onclick="popup('picture', './images/image_list/02/')">
                                     <img src="./images/2_brewary_01/img_04.png" alt="TOUR 이미지"/>
                                     <div class="title">
                                         <h3>TOUR</h3>
@@ -260,7 +268,7 @@
                         </li>
                         <li class="mt85">
                             <div class="button_wrap">
-                                <a href="#" onclick="popup('picture', './images/2_brewary_01/tour_02/')">
+                                <a href="#" onclick="popup('picture', './images/image_list/03/')">
                                     <img src="./images/2_brewary_01/img_05.png" alt="PUB 이미지"/>
                                     <div class="title">
                                         <h3>PUB</h3>
@@ -280,7 +288,7 @@
                         </li>
                         <li class="last">
                             <div class="button_wrap">
-                                <a href="#" onclick="popup('picture', './images/2_brewary_01/tour_03/')">
+                                <a href="#" onclick="popup('picture', './images/image_list/04/')">
                                     <img src="./images/2_brewary_01/img_06.png" alt="기프트 샵 이미지"/>
                                     <div class="title">
                                         <h3>기프트 샵</h3>
