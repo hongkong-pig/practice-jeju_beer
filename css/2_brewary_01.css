@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+.intro_wrap{
+    padding: 200px 0;
+    background: url(../images/2_brewary_01/bg_brewery.png) no-repeat;
+    background-position: center;
+}
+
+.intro_list{
+    display: inline-block;
+}
+.intro_list li{
+    display: inline-block;
+    position: relative;
+    margin-right: 50px;
+}
+.intro_list li .button_wrap{
+    width: 245px;
+    height: 245px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #e6e1d7;
+    overflow: hidden;
+    position: relative;
+}
+.intro_list .button_wrap:after{
+    content: "";
+    display: block;
+    width: 255px;
+    height: 255px;
+    border-radius: 50%;
+    background-color: #59677b;
+    transition: all 0.5s;
+    top: 250px;
+    left: 250px;
+    position: absolute;
+    z-index: 0;
+}
+.intro_list li .button_wrap:hover:after{
+    top: 0;
+    left: 0;
+}
+.intro_list li .button_wrap:hover a .title h3{
+    background: rgba(230,225,215,0.0);
+}
+.intro_list li .button_wrap:hover a:after{
+    transform: scale(1);
+}
+/*
+.intro_list li:before{
+    content: "";
+    display: block;
+    width: 255px;
+    height: 255px;
+    border-radius: 50%;
+    background-color: #e6e1d7;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+*/
+.intro_list li.last{
+    margin-right: 0;
+}
+.intro_list li.mb85{
+    margin-bottom: 85px;
+}
+.intro_list li.mt85{
+    margin-top: 85px;
+}
+.intro_list li a{
+    display: block;
+    height: 100%;
+    position: relative;
+}
+.intro_list li a:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(230,225,215,0.7);
+    transform: scale(0);
+    transition: all 0.5s;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 5;
+}
+.intro_list li a img{
+    display: inline-block;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 4;
+}
+.intro_list li a .title{
+    width: 255px;
+    height: 255px;
+    line-height: 255px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 6;
+}
+.intro_list li a .title h3{
+    line-height: normal;
+    font-size: 22px;
+    font-weight: 700;
+    display: inline-block; 
+    vertical-align: middle;
+    padding: 5px 10px;
+    background-color: rgba(230,225,215,0.7);
+    transition: all 0.3s;
+}
+.intro_list li .text_wrap{
+    width: 255px;
+    height: 180px;
+    line-height: 180px;
+    font-size: 15px;
+    position: absolute;
+    z-index: 2;
+}
+.intro_list li .text_wrap .text_box{
+    line-height: normal;
+    display: inline-block;
+}
+.intro_list li .text_wrap .title{
+    font-weight: 700;
+}
+.intro_list li .text_wrap .title .small_arrow{
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    vertical-align: middle;
+    display: inline-block;
+    background: url(../images/common/icon_small_arrow.png) no-repeat;
+}
+
+
+.intro_brewary li{
+    vertical-align: bottom;
+}
+.intro_brewary li .text_wrap{
+    top: -200px;
+}
+.intro_brewary li .text_wrap .text_box{
+    vertical-align: bottom;
+}
+.intro_tour li{
+    vertical-align: top;
+}
+.intro_tour li .text_wrap{
+    bottom: -200px;
+}
+.intro_tour li .text_wrap .text_box{
+    vertical-align: top;
+}
+
+
+.center_wrap{
+    width: 550px;
+    height: 190px;
+    padding-top: 90px;
+    display: inline-block;
+    overflow: hidden;
+}
+.center_box{
+    display: inline-block;
+}
+.center_box.first{
+    float: left;
+}
+.center_box.second{
+    float: right;
+}
+.center_box a{}
+.center_box a img{}
+.center_box p{
+    font-size: 13px;
+    color: #444f5e;
+}
+.center_box p.title{
+    font-size: 15px;
+    -webkit-transform: scaleX(0.9);
+    transform: scaleX(0.9);
+}
+
+
+
+.popup{
+    width: 450px;
+    height: 450px;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    display: none;
+    z-index: 10;
+}
+.popup .content_view{
+    width: 450px;
+    height: 450px;
+}
+.popup .button_close{
+    width: 25px;
+    height: 25px;
+    background: url(../images/4_members_02/icon_01.png) no-repeat;
+    background-size: 20px 20px;
+    background-position: center;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}

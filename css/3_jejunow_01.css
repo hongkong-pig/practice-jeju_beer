@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+.main_info_wrap{
+    width: 950px;
+    display: inline-block;
+    background-color: #e6e1d7;
+}
+.main_info_wrap img{
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+    vertical-align: middle;
+}
+.main_info_wrap .content_box{
+    width: 540px;
+    padding: 10px;
+    line-height: normal;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: right;
+}
+.main_info_wrap .content_box p{
+    font-size: 15px;
+}
+.main_info_wrap .content_box .title{
+    margin-bottom: 15px;
+    color: #474747;
+    transform-origin: right;
+    border-bottom: 1px solid #666;
+}
+
+.sns_list{
+    margin: 5px 0 30px 0;
+}
+.sns_list li{
+    width: 300px;
+    margin-top: 25px;
+    margin-right: 25px;
+    display: inline-block;
+    vertical-align: top;
+}
+.sns_list li.last{
+    margin-right: 0;
+}
+.sns_list li a{
+    height: 100%;
+    display: block;
+}
+.sns_list li a img{
+    width: 298px;
+    height: 298px;
+    border: 1px solid #ddd;
+}
+.sns_list .text_wrap{
+    width: 278px;
+    padding: 10px;
+    margin-top: -1px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.sns_list .text_wrap .content{
+    height: 60px;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 15px;
+}
+.writer_wrap{
+    margin-top: 10px;
+}
+.writer_wrap .writer_icon{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 0;
+}
+.writer_wrap .writer_text_wrap{
+    width: 228px;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.writer_wrap .writer_text_wrap p{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transform-origin: left;
+    -webkit-transform: scaleX(0.9);
+    transform: scaleX(0.9);
+}
+.writer_wrap .writer_text_wrap .writer{
+    font-size: 15px;
+}
+.writer_wrap .writer_text_wrap .date{
+    font-size: 12px;
+    color: #7a7a7a;
+}
+
+.button_more{
+    width: 65px;
+    height: 65px;
+    display: block;
+    background-color: rgba(36,203,211,0.5);
+    
+    left: 50%;
+    margin-left: -32px;
+    bottom: 0;
+    position: absolute;
+}

@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+.subject_wrap{
+    text-align: left;
+}
+.subject_wrap .title{
+    padding: 10px;
+    font-size: 30px;
+    transform-origin: left;
+    color: #0099a8;
+}
+.subject_wrap:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #0099a8;
+}
+
+.member_list{
+    margin: 5px 0 30px 0;
+}
+.member_list li{
+    width: 300px;
+    margin-top: 25px;
+    margin-right: 25px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+.member_list li.last{
+    margin-right: 0;
+}
+.member_list li img{
+    width: 298px;
+    border: 1px solid #ddd;
+}
+.member_list .text_wrap{
+    width: 278px;
+    padding: 10px;
+    margin-top: -1px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.member_list .text_wrap .title{
+    font-size: 17px;
+    font-weight: 700;
+    color: #008c9d;
+}
+.member_list .text_wrap .content{
+    font-size: 15px;
+}
+
+.button_onedayclass{
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    background: url(../images/4_members_01/icon_01.png) no-repeat;
+    background-size: 100%;
+    
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+.popup{
+    width: 840px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    top: 150px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    display: none;
+    z-index: 5;
+}
+.popup img{
+    width: 450px;
+    height: 459px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.popup .text_wrap{
+    width: 350px;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+}
+.popup .text_wrap .title{
+    font-size: 30px;
+    transform-origin: left;
+    border: 0;
+    color: #25cbd3;
+}
+.popup .text_wrap .sub_title{
+    margin-top: 10px;
+    font-size: 25px;
+    transform-origin: left;
+    color: #474747;
+}
+.popup .text_wrap .sub_title .highlight{
+    margin-right: 15px;
+    color: #0399a8;
+}
+.popup .text_wrap p{
+    font-size: 15px;
+}
+.popup .button{
+    margin-top: 30px;
+}
+.popup .button_close{
+    width: 25px;
+    height: 25px;
+    background: url(../images/4_members_02/icon_01.png) no-repeat;
+    background-size: 20px 20px;
+    background-position: center;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}

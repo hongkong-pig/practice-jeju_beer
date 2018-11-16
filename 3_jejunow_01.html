@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>JEJU BEER</title>
+        <link href="./font/fonts.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/default.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/include.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/3_jejunow_01.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="./js/jquery.min.js" type="text/javascript"></script>
+        <script src="./js/include.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".button_more").click(function(){
+                    $.get("./form/li_03.html", function(data) {
+                        var elem = $(data);
+                        console.log(data);
+                        for(var i= 0; i< 3; ++i) {
+                            var clone = elem.clone();
+                            if(i == 2){
+                                clone.attr("class","last");
+                            }
+                            $(".sns_list").append(clone);
+                        }
+                    })
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="navigation">
+            </div>
+            <header id="header" class="inner">
+            </header>
+            <div id="container" class="inner">
+                <div class="page_info_wrap">
+                    <h2 class="title">JEJU NOW</h2>
+                </div>
+                <div class="main_info_wrap">
+                    <div class="content_box">
+                        <h3 class="title">2017 MICHELIN CHEF<br/>
+                        &amp; BREWMASTER&rsquo;S TABLE</h3>
+                        <p>
+                            둘도 없는 세기의 만남<br/>
+                            <br/>
+                            제임스 비어드 수상자 개릿 올리버와<br/>
+                            미슐랭 셰프 임정식이 만났습니다.<br/>
+                            <br/>
+                            미슐랭 셰프 임정식은 제주에 영감을 받은 음식을,<br/>
+                            브루마스터 개릿 올리버는 그에 맞는 맥주를 소개하는<br/>
+                            맥주&amp;푸드 페어링의 현장입니다.
+                            
+                        </p>
+                    </div>
+                    <img src="./images/3_jejunow_01/img_main_01.png" alt="SNS 메인배너"/>
+                </div>
+                <ul class="sns_list">
+                    <li>
+                        <a href="#">
+                            <img src="./images/3_jejunow_01/img_sub_01.png" alt="sns 이미지 01">
+                            <div class="text_wrap">
+                                <p class="content">‘제주맥주 ○○○’ 를 부탁해!</p>
+                                <div class="writer_wrap">
+                                    <img class="writer_icon" src="./images/common/logo_icon.png"/>
+                                    <div class="writer_text_wrap">
+                                        <p class="writer">JEJU BEER</p>
+                                        <p class="date">2018-05-11</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/3_jejunow_01/img_sub_02.png" alt="sns 이미지 02">
+                            <div class="text_wrap">
+                                <p class="content">
+                                    늦은 저녁 책을 보면서 마시는 맥주.
+                                    <br/>
+                                    하루를 마무리하는 소소하지만
+                                    <br/>
+                                    확실한 행복.
+                                </p>
+                                <div class="writer_wrap">
+                                    <img class="writer_icon" src="./images/common/logo_icon.png"/>
+                                    <div class="writer_text_wrap">
+                                        <p class="writer">JEJU BEER</p>
+                                        <p class="date">2018-05-11</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="last">
+                        <a href="#">
+                            <img src="./images/3_jejunow_01/img_sub_03.png" alt="sns 이미지 03">
+                            <div class="text_wrap">
+                                <p class="content">
+                                    제주 감귤 맥주로 돌풍을 일으킨
+                                    <br/>
+                                    어서와 #제주맥주
+                                    <br/>
+                                    서울 첫 행사 #GKBF 에서 만나보시길
+                                </p>
+                                <div class="writer_wrap">
+                                    <img class="writer_icon" src="./images/common/logo_icon.png"/>
+                                    <div class="writer_text_wrap">
+                                        <p class="writer">JEJU BEER</p>
+                                        <p class="date">2018-05-11</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/3_jejunow_01/img_sub_01.png" alt="sns 이미지 01">
+                            <div class="text_wrap">
+                                <p class="content">‘제주맥주 ○○○’ 를 부탁해!</p>
+                                <div class="writer_wrap">
+                                    <img class="writer_icon" src="./images/common/logo_icon.png"/>
+                                    <div class="writer_text_wrap">
+                                        <p class="writer">JEJU BEER</p>
+                                        <p class="date">2018-05-11</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/3_jejunow_01/img_sub_02.png" alt="sns 이미지 02">
+                            <div class="text_wrap">
+                                <p class="content">
+                                    늦은 저녁 책을 보면서 마시는 맥주.
+                                    <br/>
+                                    하루를 마무리하는 소소하지만
+                                    <br/>
+                                    확실한 행복.
+                                </p>
+                                <div class="writer_wrap">
+                                    <img class="writer_icon" src="./images/common/logo_icon.png"/>
+                                    <div class="writer_text_wrap">
+                                        <p class="writer">JEJU BEER</p>
+                                        <p class="date">2018-05-11</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="last">
+                        <a href="#">
+                            <img src="./images/3_jejunow_01/img_sub_03.png" alt="sns 이미지 03">
+                            <div class="text_wrap">
+                                <p class="content">
+                                    제주 감귤 맥주로 돌풍을 일으킨
+                                    <br/>
+                                    어서와 #제주맥주
+                                    <br/>
+                                    서울 첫 행사 #GKBF 에서 만나보시길
+                                </p>
+                                <div class="writer_wrap">
+                                    <img class="writer_icon" src="./images/common/logo_icon.png"/>
+                                    <div class="writer_text_wrap">
+                                        <p class="writer">JEJU BEER</p>
+                                        <p class="date">2018-05-11</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <a class="button_more" href="#">
+                    <img src="./images/common/icon_view_more.png" alt="더보기 버튼"/>
+                </a>
+            </div>
+            <footer id="footer">
+            </footer>
+        </div>
+    </body>
+</html>

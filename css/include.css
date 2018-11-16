@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+body{
+    font-family: 'NotoSans', sans-serif;
+    min-width: 1000px;
+}
+.inner{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#wrap{}
+
+/*global navigation bar start*/
+.gnb{
+    top: 50%;
+    margin-top: -280px;
+    left: 0;
+    position: fixed;
+    z-index: 100;
+}
+
+.gnb .gnb_utill{
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #444f5e;
+    position: absolute;
+    top: -60px;
+    left: 0;
+}
+.gnb .gnb_utill img{
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+}
+
+.gnb ul li{
+    width: 165px;
+    height: 60px;
+    margin: 10px 0;
+    transition: all 0.2s linear;
+    transform-origin: left;
+    background-color: rgba(221, 221, 221, 0.7);
+}
+.gnb ul li:hover{
+/*    transform: scale(1.1);*/
+    background-color: rgba(68, 79, 94, 0.6);
+}
+.gnb ul li:hover a{
+    font-weight: 200;
+    color: #fff;
+}
+
+.gnb ul li a{
+    height: 100%;
+    display: block;
+    color: #222;
+}
+.gnb ul li a img{
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.gnb ul li a span{
+    width: 105px;
+    font-size: 13px;
+    line-height: normal;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/*sns navigation bar start*/
+.snsnb{
+    top: 50%;
+    margin-top: -185px;
+    right: 0;
+    position: fixed;
+    z-index: 100;
+}
+.snsnb li{
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    background-color: #444f5e;
+}
+.snsnb li.last{
+    background-color: #ff8674;
+}
+.snsnb li a{
+    height: 100%;
+    display: block;
+}
+.snsnb li a img{
+    width: 100%;
+}
+
+
+/*header start*/
+#header{
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    background: url(../images/common/bg_banner.png) no-repeat;
+    background-size: 100%;
+}
+#header h1{
+    width: 215px;
+    height: 65px;
+    text-indent: -9999px;
+    line-height: normal;
+    
+    display: inline-block;
+    
+    background: url(../images/common/logo.png);
+    background-size: 100%;
+}
+#header h1 a{
+    height: 100%;
+    display: block;
+}
+
+/*container start*/
+#container.inner{
+    text-align: center;
+    padding: 60px 0;
+    font-size: 0;
+    position: relative;
+/*
+    max-height: 4000px;
+    overflow-y: scroll;
+*/
+}
+.page_info_wrap{}
+.page_info_wrap .title{
+    margin-bottom: 30px;
+}
+
+/*footer start*/
+#footer{
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #222;
+}
+#footer div{
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+}
+#footer div p{
+    font-size: 13px;
+}

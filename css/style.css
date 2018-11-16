@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+/*container start*/
+#container{
+    padding-top: 30px;
+    background: url(../images/main/bg_main.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/*row 01 : video start*/
+.video_wrap{
+    width: 850px;
+    height: 478px;
+    padding: 15px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    background-color: #007177;
+    
+    position: relative;
+}
+.video_selector{
+    width: 100%;
+    top: 40px;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+.video_selector ul{
+    width: 100%;
+    text-align: center;
+}
+.video_selector ul li{
+    width: 100px;
+    height: 26px;
+    display: inline-block;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.video_selector ul li.first{
+    border-left: 2px solid #fff;
+}
+.video_selector ul .on{
+    display: none;
+}
+.video_selector ul li.first .on{
+    display: block;
+}
+.video_selector ul li.first .off{
+    display: none;
+}
+.video_selector ul li a{
+    text-indent: -9999px;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.video_selector ul li a img{
+    height: 100%;
+    display: block;
+    position: absolute;
+}
+
+.main_video{
+    position: relative;
+}
+.video_info{
+    margin-top: 160px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+.video_info p{
+    opacity: .7;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+.video_info .play_button{
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    background: rgba(255,255,255,0.7) url(../images/common/icon_play.png) no-repeat;
+}
+.main_video video{
+    width: 850px;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+#main_video_01{}
+#main_video_02{
+    display: none;
+}
+#main_video_03{
+    display: none;
+}
+
+/*row 02 : short cut start*/
+.shortcut_wrap{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.shortcut_wrap ul{
+    width: 100%;
+    text-align: center;
+}
+.shortcut_wrap ul li{
+    width: 150px;
+    display: inline-block;
+}
+.shortcut_wrap ul li a p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #444f5e;
+}
+.shortcut_wrap ul li a:hover img{
+    background-color: #0099a8;
+}
+.shortcut_wrap ul li img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}

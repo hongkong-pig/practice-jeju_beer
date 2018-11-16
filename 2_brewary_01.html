@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <title>JEJU BEER</title>
+        <link href="./font/fonts.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/default.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/include.css" rel="stylesheet" type="text/css"/>
+        <link href="./css/2_brewary_01.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="./js/jquery.min.js" type="text/javascript"></script>
+        <script src="./js/slider.js" type="text/javascript"></script>
+        <script src="./js/include.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            function popup(type, src){
+                var popup = $(".popup");
+                var content_view = $(".popup .content_view");
+
+                if(type == "video") {
+                    var is_playing = false;
+                    content_view.append("<video muted='true'><source src='' type='video/mp4'/></video>");
+                    content_view.css("position","relative");
+                    var video = popup.find('video');
+                    video.css({
+                        "width": "100%",
+                        "height": "100%",
+                    });
+                    var button_wrap = $("<div></div>");
+                    var button= $("<div></div>");
+                    button_wrap.append(button);
+                    button_wrap.css({
+                        "width": content_view.width(),
+                        "height": content_view.height(),
+                        "text-align":"center",
+                        "line-height": content_view.height()+"px",
+                        "top":"0",
+                        "left":"0",
+                        "position": "absolute",
+                    });
+                    console.log(content_view.height());
+                    button.css({
+                        "width": "60px",
+                        "height": "60px",
+                        "cursor": "pointer",
+                        "display": "inline-block",
+                        "vertical-align": "middle",
+                        "border-radius":"50%",
+                        "background": "rgba(255, 255, 255, 0.5) url(./images/common/icon_play.png) no-repeat 100% center",
+                    });
+                    button.click(function(){
+                        if(!is_playing){
+                            is_playing = true;
+                            video.get(0).play();
+                            button.css({
+                                "opacity":"0",
+                            });
+                        }
+                    })
+                    button_wrap.hover(function(){
+                        if(is_playing && !video.get(0).paused) {
+                            video.get(0).pause();
+                            button.css({
+                                "opacity":"1",
+                                "cursor": "default",
+                                "background": "url(./images/common/icon_pause.png) no-repeat 100% center",
+                            });
+                            button_wrap.css({
+                                "background": "rgba(255, 255, 255, 0.5)",
+                            });
+                        }
+                    },function(){
+                        if(is_playing) {
+                            video.get(0).play();
+                            button.css({
+                                "opacity":"0",
+                            });
+                            button_wrap.css({
+                                "background": "rgba(255, 255, 255, 0)",
+                            });
+                        }
+                    })
+                    video.on('ended', function(){
+                        is_playing = false;
+                        button.css({
+                            "opacity":"1",
+                            "cursor": "pointer",
+                            "background": "rgba(255, 255, 255, 0.5) url(./images/common/icon_play.png) no-repeat 100% center",
+                        });
+                    })
+                    content_view.append(button_wrap);
+                    popup.find('source').attr('src',src);
+                    popup.css("display", "block");
+                } else if(type == "picture"){
+                    var files = [];
+                    $.get(src, function(data) 
+                    {
+                        $(data).find("a:contains(" + ".jpg" + ")").each(function(){
+                            files.push(this.href.replace(/http:\/\/(.*\/)/, ""));
+                        });
+                        var ul=$("<ul></ul>");
+                        for(var i= 0; i< files.length; ++i) {
+                            ul.append("<li><img src=\""+ src + files[i] +"\"/></li>");
+                        }
+                        content_view.append(ul);
+                        ul.find("li").css({
+                            "width": "100%",
+                            "height": "100%",
+                        });
+                        
+                        popup.css("display", "block");
+                        ul.make_slider({
+                            "page": 1,
+                            
+                            "buttons": true,
+                            "button_image_left": "./images/common/icon_button_small_left.png",
+                            "button_image_right": "./images/common/icon_button_small_right.png",
+                            "button_background":"rgba(155,155,155,0.5)",
+                            "button_width":"50px",
+                            "button_height": "50px",
+                            "button_dispersion": "20px",
+                            "button_basic_color":"#000",
+                            
+                            "scrollable":false,
+                            
+                            "navigator": true,
+                            "navigator_width": "14px",
+                            "navigator_height": "14px",
+//                            "navigator_position": "left",
+//                            "navigator_bottom": "50%",
+//                            "navigator_margin_bottom": "7px",
+//                            "navigator_radious": "50%",
+                            "navigator_color_off": "#fff",
+                            "navigator_color_on": "#25cad3",
+
+                        });
+                        
+                    });
+                }
+            }
+            function popdown(){
+//                $("#container .button_wrap a").css("pointer-events": "auto");
+                $(".popup").css("display", "none");
+                $(".popup .content_view").children().remove();
+            }
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="navigation"></div>
+            <header id="header" class="inner">
+            </header>
+            <div id="container" class="inner">
+                <div class="page_info_wrap">
+                    <h2 class="title">BREWEARY &amp; TOUR</h2>
+                </div>
+                <div class="intro_wrap">
+                    <ul class="intro_brewary intro_list">
+                        <li>
+                            <div class="button_wrap">
+                            <a href="#" onclick="popup('picture', './images/2_brewary_01/brewary_01/')">
+                                <img src="./images/2_brewary_01/img_01.png" alt="BREWEARY 이미지"/>
+                                <div class="title">
+                                    <h3>BREWEARY</h3>
+                                </div>
+                            </a>
+                            </div>
+                            <div class="text_wrap">
+                                <div class="text_box">
+                                    제주의 깨끗한 바다를 바라보며<br/>
+                                    올레길을 경험하듯이,<br/>
+                                    양조장에선 맥주가<br/>
+                                    완성되는 과정까지도<br/>
+                                    즐거운 여정이 될 것입니다.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb85">
+                            <div class="button_wrap">
+                                <a href="#" onclick="popup('video', '/video/100-36270354-9b5f.mp4')">
+                                    <img src="./images/2_brewary_01/img_02.png" alt="INGREDIENTS 이미지"/>
+                                    <div class="title">
+                                        <h3>INGREDIENTS</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text_wrap">
+                                <div class="text_box">
+                                    제주맥주 양조전문가들이<br/>
+                                    직접 고른 홉에<br/>
+                                    제주의 깨끗한 물과, 유기농 감귤껍질<br/>
+                                    그리고 맥아를 섞으면 풍미 가득한<br/>
+                                    맥주가 탄생합니다.<br/>
+                                    <br/>
+                                    이런 게 바로 마법이지요!
+                                </div>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <div class="button_wrap">
+                                <a href="#" onclick="popup('video', '/video/100-33108406-b5be.mp4')">
+                                    <img src="./images/2_brewary_01/img_03.png" alt="BEER MASTER 이미지"/>
+                                    <div class="title">
+                                        <h3>BEER<br/>MASTER</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text_wrap">
+                                <div class="text_box">
+                                뉴욕의 NO.1 크래프트 맥주인<br/>
+                                브루클린 브루어리의 노하우와<br/>
+                                세계적 브루 마스터의 레시피가<br/>
+                                제주에서 시작됩니다.<br/>
+                                <br/>
+                                그 환상적인 케미가 궁금하세요?<br/>
+                                여기 비어 마스터들의<br/>
+                                맛있는 이야기를 들어보시죠.<br/>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="center_wrap">
+                        <div class="center_box first">
+                            <a href="/sub/book_01.html"><img src="./images/2_brewary_01/icon_01.png" alt="brewary 아이콘 01"/></a>
+                            <p class="title">
+                                BOOK<br/>
+                                BREWERY TOUR
+                            </p>
+                            <p>투어 예약하기</p>
+                        </div>
+                        <div class="center_box second">
+                            <a href="/sub/2_brewary_02.html"><img src="./images/2_brewary_01/icon_02.png" alt="brewary 아이콘 02"/></a>
+                            <p class="title">
+                                OUR<br/>
+                                PRODUCT
+                            </p>
+                            <p>제품 소개</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="intro_tour intro_list">
+                        <li>
+                            <div class="button_wrap">
+                                <a href="#" onclick="popup('picture', './images/2_brewary_01/tour_01/')">
+                                    <img src="./images/2_brewary_01/img_04.png" alt="TOUR 이미지"/>
+                                    <div class="title">
+                                        <h3>TOUR</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text_wrap">
+                                <div class="text_box">
+                                    <div class="title">Step1<span class="small_arrow"></span></div>
+                                    제주맥주 브랜드의 탄생과<br/>
+                                    양조 과정을 소개하는<br/>
+                                    도슨트 투어<br/>
+                                    (약 30~40분 소요)
+                                    </div>
+                            </div>
+                        </li>
+                        <li class="mt85">
+                            <div class="button_wrap">
+                                <a href="#" onclick="popup('picture', './images/2_brewary_01/tour_02/')">
+                                    <img src="./images/2_brewary_01/img_05.png" alt="PUB 이미지"/>
+                                    <div class="title">
+                                        <h3>PUB</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text_wrap">
+                                <div class="text_box">
+                                    <div class="title">Step2<span class="small_arrow"></span></div>
+                                    3층 PUB에서는 양조장에서 만든<br/>
+                                    가장 신선한 제주맥주를<br/>
+                                    즐길 수 있으며,<br/>
+                                    PUB은 투어 티켓 구매 없이도<br/>
+                                    이용이 가능합니다.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <div class="button_wrap">
+                                <a href="#" onclick="popup('picture', './images/2_brewary_01/tour_03/')">
+                                    <img src="./images/2_brewary_01/img_06.png" alt="기프트 샵 이미지"/>
+                                    <div class="title">
+                                        <h3>기프트 샵</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="text_wrap">
+                                <div class="text_box">
+                                    <div class="title">Step2<span class="small_arrow"></span></div>
+                                    제주 아티스트와<br/>
+                                    제주맥주의 콜라보로<br/>
+                                    제주맥주 양조장에서만<br/>
+                                    만날 수 있는<br/>
+                                    스페셜 기념품
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="popup">
+                    <div class="content_view"></div>
+<!--
+                    <video muted="true" autoplay loop>
+                        <source src="/video/100-33108406-b5be.mp4" type="video/mp4"/>
+                    </video>
+-->
+                    <a class="button_close" href="#" onclick="popdown()"></a>
+                </div>
+            </div>
+            <footer id="footer">
+            </footer>
+        </div>
+    </body>
+</html>
